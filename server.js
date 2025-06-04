@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+
 const menu = [{ 
       id: 1,
       name: 'Quantum Quinoa Mushroom Burger',
@@ -49,7 +50,7 @@ app.get('/menu/:category',(req,res)=>{
 
 app.get('/menu',(req,res)=>{
     const index = req.params.menu
-    res.render('menu.ejs')
+    res.render('menu.ejs',{Menu:menu})
 })
 
 app.get('/', (req, res) => {
